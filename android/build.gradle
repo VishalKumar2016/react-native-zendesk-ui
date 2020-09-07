@@ -66,6 +66,7 @@ repositories {
         // Android JSC is installed from npm
         url "$rootDir/../node_modules/jsc-android/dist"
     }
+    maven { url 'https://zendesk.jfrog.io/zendesk/repo' }
     google()
     jcenter()
 }
@@ -73,6 +74,7 @@ repositories {
 dependencies {
     //noinspection GradleDynamicVersion
     implementation 'com.facebook.react:react-native:+'  // From node_modules
+    implementation group: 'com.zendesk', name: 'support', version: '4.0.0'
 }
 
 def configureReactNativePom(def pom) {
