@@ -20,8 +20,18 @@ public class ZendeskUiModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void sampleMethod(String stringArgument, int numberArgument, Callback callback) {
-        // TODO: Implement some actually useful functionality
-        callback.invoke("Received numberArgument: " + numberArgument + " stringArgument: " + stringArgument);
+    public void initZendesk(String zendeskUrl, String appId, String clientId) {
+        Zendesk.INSTANCE.init(reactContext, zendeskUrl, appId, clientId);
+
+        Identity identity = new AnonymousIdentity();
+        Zendesk.INSTANCE.setIdentity(identity);
+
+        Support.INSTANCE.init(Zendesk.INSTANCE);
     }
+
+    @ReactMethod
+    public void showHelpCenter() {
+        HelpCenterActivity.builder().show(reactContext);
+    }
+
 }
