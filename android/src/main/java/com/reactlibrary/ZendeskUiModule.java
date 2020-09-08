@@ -3,7 +3,12 @@ package com.reactlibrary;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.Callback;
+
+import zendesk.core.AnonymousIdentity;
+import zendesk.core.Identity;
+import zendesk.core.Zendesk;
+import zendesk.support.Support;
+import zendesk.support.guide.HelpCenterActivity;
 
 public class ZendeskUiModule extends ReactContextBaseJavaModule {
 
